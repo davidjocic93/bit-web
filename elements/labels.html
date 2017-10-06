@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Labels</title> 
+</head>
+
+<body>
+    <form method="get">
+        <fieldset>
+            <legend>Personal data</legend>
+
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required="required" placeholder="Name"><br>
+
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" required="required" placeholder="Phone">
+        </fieldset>
+
+        <br>
+        <fieldset>
+            <legend>Event Info</legend>
+
+            <label for="event">Event type</label>
+            <select name="event" id="event">
+                <option value="birthday">Birthday</option>
+                <option value="weeding" selected="selected">Weeding</option>
+                <option value="company">Company</option>
+            </select><br>
+
+            <label for="guests">Guests Number</label>
+            <input id="guests" type="text" name="guests" placeholder="Example: 100" required="required"><br>
+        </fieldset>
+        
+        <br>
+        <fieldset>
+            <legend>Post shudeler</legend>
+
+            <label for="title">Post title</label>
+            <input id="title" type="text" name="title" required="required" placeholder="Title"><br>
+
+            <label for="date"> Publish post on</label>
+            <input id="date" type="date" name="date" required="required"><br>
+
+            <label for="url">Content URL</label>
+            <input id="url" type="url" name="url" required="required" placeholder="Url"><br>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required="required" placeholder="Email"><br>
+        </fieldset>
+        
+        <br>
+        <input type="submit" value="Send"><br>
+
+    </form>
+    </body>
+
+</html>
