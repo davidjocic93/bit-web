@@ -3,6 +3,8 @@
     padding: 0px;
 }
 
+/* @media only screen and (max-width: 576px){ */
+
 body {
     width: 100%;
 }
@@ -243,8 +245,156 @@ h2 span {
     background-color: rgb(46, 248, 171);
     width: 100%;
     text-align: center;
-    height: 300px;
+    height: 150px;
     color: white;
-    padding: 50px;
+    padding: 20px;
 }
+
+#contact h4 {
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+#contact-phone, #contact-email {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+    margin: 0px auto;
+    font-size: 1.2em;
+}
+
+#contact-phone span {
+    padding-left: 10px;
+}
+
+#contact-email a {
+    padding-left: 10px;
+}
+
+#contact-email a:link {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#phone-icon, #email-icon {
+    width: 20px;
+    height: 20px;
+}
+
+#connect {
+    background-color: rgb(255, 81, 148);
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    color: white;
+    padding: 20px;
+}
+
+#connect h4 {
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+#connect img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+#connect a:link {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#adress {
+    background-color: rgb(3, 114, 199);
+    width: 100%;
+    text-align: center;
+    height: 80px;
+    color: white;
+    padding: 20px;
+}
+
+#adress h4 {
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+#adress img {
+    width: 20px;
+    height: 20px;
+}
+
+#house {
+    position: relative;
+    background-color: rgb(99, 181, 243);
+    width: 100%;
+    text-align: center;
+    height: 150px;
+    padding: 20px;
+}
+
+#house img {
+    width: 150px;
+}
+
+iframe {
+    width: 100%;
+    margin: 0px auto;
+}
+
+#mail-us {
+    margin-top: 0px;
+    text-align: center;
+}
+
+#mail-us input {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    line-height: 2em;
+}
+
+#mail-us textarea {
+    width: 80%;
+}
+
+#mail-us button {
+    background-color: orange;
+    border-radius: 3px;
+    margin: 20px;
+    position: relative;
+    right: 25%;
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    height: 150px;
+    width: 100%;
+    padding-right: 10px;
+}
+
+footer li {
+    list-style-type: none;
+    float: left;
+    width: 15%;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+footer p {
+    padding-bottom: 30px;
+    clear: both;
+}
+
+
+
+/* } */
+
 
