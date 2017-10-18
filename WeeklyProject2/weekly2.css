@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-/* @media only screen and (max-width: 576px){ */
+@media only screen and (max-width: 576px){
 
 body {
     width: 100%;
@@ -150,6 +150,7 @@ h2 span {
     float: left;
     padding-top: 60px;
     padding-left: 20px;
+    box-sizing: border-box;
 }
 
 #will p {
@@ -188,6 +189,8 @@ h2 span {
     float: left;
     padding-top: 60px;
     padding-left: 20px;
+    box-sizing: border-box;
+    
 }
 
 #jenifer p {
@@ -226,6 +229,7 @@ h2 span {
     float: left;
     padding-top: 60px;
     padding-left: 20px;
+    box-sizing: border-box;    
 }
 
 #selena p {
@@ -247,18 +251,20 @@ h2 span {
     text-align: center;
     height: 150px;
     color: white;
-    padding: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    
 }
 
 #contact h4 {
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 10px;
 }
 
 #contact-phone, #contact-email {
     display: block;
     width: 50%;
-    padding: 10px;
+    padding: 5px;
     text-align: left;
     position: relative;
     margin: 0px auto;
@@ -290,17 +296,18 @@ h2 span {
     text-align: center;
     height: 100px;
     color: white;
-    padding: 20px;
+    padding: 10px;
+    box-sizing: border-box;    
 }
 
 #connect h4 {
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 10px;
 }
 
 #connect img {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin: 10px;
 }
 
@@ -314,13 +321,14 @@ h2 span {
     background-color: rgb(3, 114, 199);
     width: 100%;
     text-align: center;
-    height: 80px;
+    height: 100px;
     color: white;
-    padding: 20px;
+    padding: 5px;
+    box-sizing: border-box;    
 }
 
 #adress h4 {
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 10px;
 }
 
@@ -335,7 +343,8 @@ h2 span {
     width: 100%;
     text-align: center;
     height: 150px;
-    padding: 20px;
+    padding: 10px;
+    box-sizing: border-box;    
 }
 
 #house img {
@@ -378,6 +387,432 @@ footer {
     height: 150px;
     width: 100%;
     padding-right: 10px;
+    box-sizing: border-box;
+}
+
+footer li {
+    list-style-type: none;
+    float: left;
+    width: 15%;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+footer p {
+    padding-bottom: 30px;
+    clear: both;
+}
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+
+body {
+    width: 100%;
+}
+
+header {
+    position: relative;
+}
+
+#heading-picture {
+    width: 100%;
+}
+
+.header-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.3em;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+button {
+    width: 30%;
+    height: 2em;
+    background-color: rgb(45, 113, 238);
+    border-radius: 10px;
+    color: white;
+    border: 0px;
+    font-weight: bold;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    font-size: 1.5em;
+}
+
+h1 span {
+    color: orange;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
+    padding-left: 5px;
+}
+
+#nav-list {
+    text-align: center;
+    color: white;
+    list-style-type: none;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    font-size: 0.9em;
+}
+
+#nav-list li {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    float: left;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+h2 span {
+    border-bottom: 2px solid black;
+}
+
+#who-we-are {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    float: left;
+    width: 90%;
+    padding: 20px;
+    position: relative;
+    display: block;
+}
+
+#welcome-link {
+    width: 45%;
+    margin: 20px;
+    color: rgb(96, 167, 233);
+}
+
+#welcome-link:link {
+    color: rgb(96, 167, 233);
+    text-decoration: none;
+}
+
+#who-par-1 {
+    width: 45%;    
+    margin: 10px;
+    padding: 10px;
+}
+
+#who-par-2 {
+    width: 95%;
+    margin: 10px;
+    padding: 10px;
+}
+
+#main-list {
+    margin: 10px;
+    padding: 10px;
+    list-style-position: inside;
+    list-style-image: url('images.jpg');
+    font-size: 0.9em;
+    margin-bottom: 50px;
+}
+
+#about-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;    
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#will   {
+    width: 43%;
+    background-color: rgb(96, 167, 233);
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    margin-left: 30px;
+    float: left;
+}
+
+#will img {
+    width: 15%;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 5px;
+    margin: 10px;
+    float: left;
+    margin-top: 30px;
+}
+
+#will h3 {
+    color: black;
+    float: left;
+    padding-top: 50px;
+    padding-left: 20px;
+    width: 40%;
+}
+
+#will p {
+    clear: both;
+    margin: 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#jenifer   {
+    width: 43%;
+    background-color: rgb(96, 167, 233);
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    margin-right: 30px;
+    float: right;
+}
+
+#jenifer img {
+    width: 15%;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 5px;
+    margin: 10px;
+    float: left;
+    margin-top: 30px;
+}
+
+#jenifer h3 {
+    color: black;
+    float: left;
+    padding-top: 50px;
+    padding-left: 20px;
+    width: 40%;
+}
+
+#jenifer p {
+    clear: both;
+    margin: 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#selena   {
+    width: 43%;
+    background-color: rgb(96, 167, 233);
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    margin-left: 30px;
+    clear: both;
+    display: block;
+}
+
+#selena img {
+    width: 15%;
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 5px;
+    margin: 10px;
+    float: left;
+    margin-top: 30px;
+}
+
+#selena h3 {
+    color: black;
+    float: left;
+    padding-top: 50px;
+    padding-left: 20px;
+    width: 40%;
+}
+
+#selena p {
+    clear: both;
+    margin: 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#contact {
+    background-color: rgb(46, 248, 171);
+    width: 50%;
+    text-align: center;
+    height: 150px;
+    color: white;
+    padding: 10px;
+    float: left;
+    box-sizing: border-box;
+
+}
+
+#contact h4 {
+    font-size: 1.1em;
+    padding: 5px;
+}
+
+#contact-phone, #contact-email {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+    margin: 0px auto;
+    font-size: 0.9em;
+}
+
+#contact-phone span {
+    padding-left: 10px;
+}
+
+#contact-email a {
+    padding-left: 10px;
+}
+
+#contact-email a:link {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#phone-icon, #email-icon {
+    width: 20px;
+    height: 20px;
+}
+
+#connect {
+    background-color: rgb(255, 81, 148);
+    width: 50%;
+    text-align: center;
+    height: 150px;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    float: right;
+}
+
+#connect h4 {
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+#connect img {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+
+#connect a:link {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+#adress {
+    background-color: rgb(3, 114, 199);
+    width: 50%;
+    text-align: center;
+    height: 150px;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    float: left;
+    font-size: 0.9em;
+}
+
+#adress h4 {
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+#adress img {
+    width: 20px;
+    height: 20px;
+}
+
+#house {
+    background-color: rgb(99, 181, 243);
+    width: 50%;
+    text-align: center;
+    height: 150px;
+    padding: 20px;
+    float: right;
+    box-sizing: border-box;
+}
+
+#house img {
+    width: 30%;
+}
+
+iframe {
+    width: 100%;
+    margin: 0px auto;
+}
+
+#mail-us {
+    margin-top: 0px;
+    text-align: center;
+}
+
+#mail-us input {
+    display: inline-block;
+    margin: 10px 5px;
+    width: 25%;
+    line-height: 2em;
+}
+
+#mail-us textarea {
+    width: 81%;
+}
+
+#mail-us button {
+    background-color: orange;
+    border-radius: 3px;
+    margin: 20px;
+    position: relative;
+    right: 25%;
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    height: 150px;
+    width: 100%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+footer ul {
+    width: 60%;
+    margin: 0px auto;
+    font-size: 0.9em;
 }
 
 footer li {
@@ -395,6 +830,8 @@ footer p {
 
 
 
-/* } */
+
+
+}
 
 
