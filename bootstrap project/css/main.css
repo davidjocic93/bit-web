@@ -1,0 +1,91 @@
+.bg-light {
+  background-color: #424242 !important; }
+
+.header {
+  padding: 0; }
+
+.navbar-light .navbar-brand {
+  color: white; }
+.navbar-light .navbar-toggler {
+  color: white;
+  background-color: #33d4b1; }
+
+.hero-container {
+  padding-top: 35px;
+  background-color: #33d4b1; }
+  .hero-container p {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 15px 15px; }
+  .hero-container h1 {
+    text-align: center;
+    color: white;
+    padding: 20px 0 5px 0;
+    padding-bottom: 0px; }
+
+main {
+  box-sizing: border-box;
+  padding: 0; }
+  main .hero-container {
+    margin-top: 50px; }
+    main .hero-container p {
+      text-align: center;
+      font-size: 20px; }
+  main h1 {
+    text-align: center;
+    padding: 10px; }
+  main img {
+    box-sizing: border-box;
+    padding: 10px;
+    max-height: 300px; }
+  main .btn-primary {
+    margin: 10px auto;
+    display: block;
+    border: 1px solid white;
+    background-color: #33d4b1;
+    margin-bottom: 50px; }
+  main .btn-primary:hover {
+    background-color: #33d4b1; }
+  main .contact-us {
+    padding: 0; }
+    main .contact-us p {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 30px; }
+    main .contact-us form {
+      padding: 0; }
+      main .contact-us form input, main .contact-us form textarea {
+        box-sizing: border-box;
+        padding: 5px;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid grey; }
+    main .contact-us .btn-secondary {
+      display: block;
+      margin-left: 10px;
+      background-color: #33d4b1 !important;
+      color: white;
+      border: 0px;
+      margin-bottom: 40px; }
+    main .contact-us h1 {
+      margin-top: 50px; }
+
+footer {
+  padding: 0;
+  color: white;
+  text-align: center;
+  background-color: #2f384b; }
+  footer h1 {
+    text-align: center; }
+  footer p {
+    text-align: center; }
+  footer img {
+    width: 40px;
+    margin: 20px 10px; }
+  footer .sec {
+    padding: 30px 0; }
+  footer .footer-sec-3 {
+    width: 80%; }
+
+/*# sourceMappingURL=main.css.map */
