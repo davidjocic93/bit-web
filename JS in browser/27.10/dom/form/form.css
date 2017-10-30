@@ -1,0 +1,89 @@
+#container{
+    margin: 0px auto;
+    width: 600px;
+    font-family: sans-serif;
+
+}
+
+.redborder {
+    border: 2px solid red;
+}
+
+h1 {
+    color: rgb(194, 23, 23);
+    font-size: 40px;
+    text-align: center;
+    
+
+
+}
+h2{
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgb(85, 75, 75);    
+    padding: 60px 20px 10px;
+    margin: 50px;
+}
+h2 span{
+    color: rgb(236, 140, 13);
+}
+form{
+    background-color: rgb(221, 218, 218);
+    border-radius: 15px 0px 15px 0px;
+    width: 400px;
+    margin: 0px auto;
+    
+}
+input[type='text']{
+    display: block;
+    margin: 0px auto;
+    width: 300px;
+    height: 35px;
+    border-radius:5px; 
+    padding: 0px 40px;
+}
+label{
+    margin: 30px 0px 3px 50px;
+    display: block;
+}
+
+button {
+    margin: 50px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: rgb(194, 23, 23);
+    border:none;
+    color: white;
+}
+
+form:hover{
+    cursor: pointer;
+}
+#name{
+    background-image: url('https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-128.png');
+    background-repeat: no-repeat;
+    background-size:  20px;
+    background-position: 6px 6px;
+}
+
+#email{
+    background-image: url('http://www.myiconfinder.com/uploads/iconsets/256-256-2551789035d03d242a37aec568dc8eea-email.png');
+    background-repeat: no-repeat;
+    background-size:  20px;
+    background-position: 6px 6px;
+}
+
+#number{
+    background-image: url('https://image.freepik.com/free-icon/mobile-phone_318-70471.jpg');
+    background-repeat: no-repeat;
+    background-size:  20px;
+    background-position: 6px 6px;
+}
+
+#address{
+    background-image: url('https://cdn3.iconfinder.com/data/icons/business-and-finance-2/128/home.png');
+    background-repeat: no-repeat;
+    background-size:  20px;
+    background-position: 6px 6px;
+}
+
