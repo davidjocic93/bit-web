@@ -1,0 +1,24 @@
+* {
+    padding: 0
+}
+
+h1 {
+    text-align: center;
+}
+.showContainer {
+    border: 1px solid grey;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 10px 5px;
+
+    img {
+        width: 100%;
+        height: 90%;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    a {
+        padding: 20px;
+    }
+}

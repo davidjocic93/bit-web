@@ -13,14 +13,19 @@ button.on("click", function () {
 
     $(container).html(" ");
 
-    request.done(function (message) {
-        console.log(message);
+    request.done(function (response) {
+        console.log(response);
 
-        for (var i = 0; i < message.items.length; i++) {
-            var element = message.items;
+        for (var i = 0; i < response.items.length; i++) {
+            var element = response.items;
 
-            $(container).append("<img class='slika' src='" + element[i].avatar_url + "'>");
-            $(container).append("<a href='" + element[i].html_url + "' target='_blank' class='link'>" + element[i].login + "</a>" + "<br>");
+            // $(container).append("<img class='slika' src='" + element[i].avatar_url + "'>");
+            $(container).append(`<img class="slika" src="${element[i].avatar_url}">`)
+            // $(container).append("<a href='" + element[i].html_url + "' target='_blank' class='link'>" + element[i].login + "</a>" + "<br>");
+
+            $(container).append(`<a href=" ${element[i].html_url}" target="_blank" class="link"> ${element[i].login} </a> <br>`)
+
+           
 
         }
 
