@@ -3,7 +3,6 @@ import { communicationService } from "../service/communicationService";
 import { Sparklines, SparklinesLine, SparklinesReferenceLine, SparklinesBars } from 'react-sparklines';
 import MyMapComponent from "./mapComponent";
 import { ON_LOAD } from "../constants";
-import City from "./dto/cityDTO";
 
 
 
@@ -13,60 +12,59 @@ class MainPage extends React.Component {
 
         this.state = {
             searchTerm: "",
-            citiesData: [],
-            newCities: []
+            cityData: [],
         }
     }
 
     componentDidMount() {
-        this.loadData(ON_LOAD);
-    }
-
-    loadData = (cities) => {
-        let citiesData = [];
-
-        cities.map((singleCity) => {
-            communicationService.getRequest("/forecast", singleCity,
+        ON_LOAD.forEach((city) => {
+            communicationService.getRequest("forecast", city,
                 (response) => {
-                    const { city, list } = response.data;
-                    const temp = list.map(dt => dt.main.temp);
-                    const humidity = list.map(dt => dt.main.humidity);
-                    const newCity = new City(city.id, city.name, city.coord.lon, city.coord.lat, temp, humidity);
-                    citiesData.push(newCity);
+                    const cityDataState = this.state.cityData;
+                    const city = {};
+                    city.coordinates = response.data.city.coord;
+                    city.dataPerHour = response.data.list;
+                    city.name = response.data.city.name;
+                    cityDataState.unshift(city);
                     this.setState({
-                        citiesData: citiesData,
-                        searchTerm: ""
+                        cityData: cityDataState,
                     });
-                    // return citiesData;
                 },
                 (error) => {
                     console.log(error);
                 });
-            // citiesData = this.state.citiesData;
         });
-
-        // Promise.all(citiesData)
-        //     .then(data => {
-        //         data
-        //             .sort()
-        //             .map((siti) => {
-        //                 this.setState({
-        //                     citiesData: this.state.citiesData.push(siti)
-        //                 });
-        //             });
-        //     });
     }
 
 
     searchCities = (event) => {
 
+        event.preventDefault();
+
         const city = this.state.searchTerm;
-        this.loadData([city]);
-        
+
+        communicationService.getRequest("forecast", city,
+            (response) => {
+                const cityDataState = this.state.cityData;
+                const city = {};
+                city.coordinates = response.data.city.coord;
+                city.dataPerHour = response.data.list;
+                city.name = response.data.city.name;
+                cityDataState.unshift(city);
+                this.setState({
+                    cityData: cityDataState,
+                    searchTerm: ""
+                });
+            },
+            (error) => {
+                console.log(error);
+            })
     }
 
     handleInputChange = (event) => {
         const searchString = event.target.value;
+
+        console.log(searchString);
 
         this.setState({
             searchTerm: searchString
@@ -75,44 +73,55 @@ class MainPage extends React.Component {
 
     render() {
 
-        const citiesData = this.state.citiesData;
 
-        if (typeof(this.state.citiesData) !== "object") {
+        if (this.state.cityData === []) {
             return <p>Loading</p>;
         }
 
-        console.log(this.state.citiesData);
+
 
         return (
+
             <div>
                 <form className="form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" onChange={this.handleInputChange} value={this.state.searchTerm} type="text" placeholder="Search" />
                     <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.searchCities}>Search</button>
                 </form>
 
-                {citiesData.map((city) => {
+                {this.state.cityData.map((city) => {
+
+                    const tempByHours = [];
+                    city.dataPerHour.map((item) => {
+                        tempByHours.push(Math.round(item.main.temp));
+                    });
+
+                    const humidityByHours = [];
+                    city.dataPerHour.map((item) => {
+                        humidityByHours.push(item.main.humidity);
+                    })
+
                     return (
-                        <div key={city.id} className="row">
-                            <div className="col-3 text-center" >
+                        <div style={{ display: "table", textAlign: "center", margin: "0 auto" }}>
+                            <div style={{ width: "30%", display: "table-cell", verticalAlign: "middle", padding: "50px" }}>
                                 <h3>{city.name}</h3>
-                                <MyMapComponent lon={city.lng} lat={city.lat}
+                                <MyMapComponent lon={city.coordinates.lon} lat={city.coordinates.lat}
                                     isMarkerShown={true}
                                     googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
                                     loadingElement={<div style={{ height: `100%` }} />}
                                     containerElement={<div style={{ height: `200px` }} />}
                                     mapElement={<div style={{ height: `100%` }} />} />
                             </div>
-                            <div className="col-4 offset-1 my-auto pb-5" >
+                            <div style={{ width: "30%", display: "table-cell", verticalAlign: "middle", padding: "50px" }}>
                                 <h3>Temperature on every 3 hours</h3>
-                                <Sparklines data={city.temp}>
+                                <Sparklines data={tempByHours}>
                                     <SparklinesBars style={{ stroke: "white", fill: "#41c3f9", fillOpacity: ".25" }} />
                                     <SparklinesLine style={{ stroke: "#41c3f9", fill: "none" }} />
                                     <SparklinesReferenceLine type="mean" />
                                 </Sparklines>
                             </div>
-                            <div className="col-4 my-auto pb-5">
+                            <div style={{ width: "30%", display: "table-cell", verticalAlign: "middle", padding: "50px" }}>
                                 <h3>Humidity on every 3 hours</h3>
-                                <Sparklines data={city.humidity}>
+                                <Sparklines data={humidityByHours}>
                                     <SparklinesBars style={{ stroke: "white", fill: "#41c3f9", fillOpacity: ".25" }} />
                                     <SparklinesLine style={{ stroke: "#41c3f9", fill: "none" }} />
                                     <SparklinesReferenceLine type="mean" />
@@ -120,9 +129,15 @@ class MainPage extends React.Component {
                             </div>
                         </div>
                     );
+
                 })}
+
+
             </div>
         );
+
+
+
     }
 }
 
