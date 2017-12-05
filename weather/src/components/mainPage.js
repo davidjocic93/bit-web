@@ -13,8 +13,6 @@ class MainPage extends React.Component {
         this.state = {
             searchTerm: "",
             cityData: [],
-            // cityLatitude: "",
-            // cityLongitude: ""
         }
     }
 
@@ -22,18 +20,15 @@ class MainPage extends React.Component {
         ON_LOAD.forEach((city) => {
             communicationService.getRequest("forecast", city,
                 (response) => {
-                    console.log(response);
                     const cityDataState = this.state.cityData;
                     const city = {};
                     city.coordinates = response.data.city.coord;
                     city.dataPerHour = response.data.list;
+                    city.name = response.data.city.name;
                     cityDataState.unshift(city);
                     this.setState({
                         cityData: cityDataState,
-                        // cityLatitude: response.data.city.coord.lat,
-                        // cityLongitude: response.data.city.coord.lon
                     });
-                    console.log(this.state.cityData);
                 },
                 (error) => {
                     console.log(error);
@@ -47,22 +42,19 @@ class MainPage extends React.Component {
         event.preventDefault();
 
         const city = this.state.searchTerm;
-        console.log(city);
 
         communicationService.getRequest("forecast", city,
             (response) => {
-                console.log(response);
                 const cityDataState = this.state.cityData;
                 const city = {};
                 city.coordinates = response.data.city.coord;
                 city.dataPerHour = response.data.list;
+                city.name = response.data.city.name;
                 cityDataState.unshift(city);
                 this.setState({
                     cityData: cityDataState,
-                    // cityLatitude: response.data.city.coord.lat,
-                    // cityLongitude: response.data.city.coord.lon
+                    searchTerm: ""
                 });
-                console.log(this.state.cityData);
             },
             (error) => {
                 console.log(error);
@@ -111,7 +103,7 @@ class MainPage extends React.Component {
                     return (
                         <div style={{ display: "table", textAlign: "center", margin: "0 auto" }}>
                             <div style={{ width: "30%", display: "table-cell", verticalAlign: "middle", padding: "50px" }}>
-                                <h3>MAP</h3>
+                                <h3>{city.name}</h3>
                                 <MyMapComponent lon={city.coordinates.lon} lat={city.coordinates.lat}
                                     isMarkerShown={true}
                                     googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
