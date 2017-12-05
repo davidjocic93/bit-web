@@ -80,10 +80,10 @@ class Header extends React.Component {
                     </form>
                 </nav>
 
-                <div style={{ visibility: this.state.visibility, position: "absolute", top: "50px", right: "4%", textAlign: "center"}}>
+                <div style={{ visibility: this.state.visibility, position: "absolute", top: "50px", right: "4%", textAlign: "center", width: "100%", zIndex: 20, backgroundColor: "white"}}>
                     <ul style={{listStyleType: "none"}}>
                         {shows.map((show) => {
-                            return <li onClick={this.clearSearch}> <Link to={`/${show.show.id}`}>{show.show.name}</Link></li>;
+                            return <li onClick={this.clearSearch} style={{borderBottom: "1px solid grey"}}> <Link to={`/${show.show.id}`}>{show.show.name}</Link></li>;
                         })}
                     </ul>
                 </div>
