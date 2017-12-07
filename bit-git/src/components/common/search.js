@@ -33,7 +33,7 @@ class Search extends React.Component {
         return (
 
             <form>
-                <input style={{ width: "90%" }} onChange={this.handleInputChange} value={this.state.searchTerm} type="search" placeholder="Search" required />
+                <input style={{ width: "90%" }} onChange={this.handleInputChange} value={this.state.searchTerm} type="search" placeholder="Search" />
                 <button className="waves-effect waves-light btn" onClick={this.dispatchSearch}>Search</button>
             </form>
 

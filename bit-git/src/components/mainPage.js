@@ -59,7 +59,7 @@ class MainPage extends Component {
                 />
                 <h3>GIF URL:</h3>
                 <br />
-                <input type="text" value={image} style={{ width: "50%" }} />
+                <p>{image}</p>
             </div>
         )
     }
