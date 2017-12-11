@@ -36,7 +36,6 @@ class SingleShowPage extends React.Component {
                 this.setState({
                     show: serverResponseData.data
                 });
-                console.log(this.state.show);
             },
             (serverError) => {
                 console.log(serverError);
@@ -45,22 +44,23 @@ class SingleShowPage extends React.Component {
 
     render() {
 
+        console.log(this.state.show);
+
         if (this.state.show == null) {
             return <p>Loading...</p>
         }
 
-        console.log(this.state.show);
         const seasons = this.state.show._embedded.seasons;
         const cast = this.state.show._embedded.cast;
 
         return (
             <div className="container">
                 <div className="row">
-                    <h1 className="col-12" style={{marginBottom:"30px"}}>{this.state.show.name}</h1>
+                    <h1 className="col-12" style={{ marginBottom: "30px" }}>{this.state.show.name}</h1>
                 </div>
                 <div className="row">
-                    <img className="col-6" style={{ height: "50%" }} src={this.state.show.image.original} alt="" />
-                    <div className="col-6">
+                    <img className="col-8 offset-2" style={{ height: "50%" }} src={this.state.show.image.original} alt="" />
+                    <div className="col-6 offset-3">
                         <h3> Seasons ({this.state.show._embedded.seasons.length})</h3>
                         <ul style={{ listStyleType: "none" }}>
                             {seasons.map((season) => {
@@ -68,13 +68,22 @@ class SingleShowPage extends React.Component {
                             })}
                         </ul>
                         <h3>Cast</h3>
-                        <ul style={{ listStyleType: "none" }}>
-                            {cast.map((acter) => {
-                                return <li key={acter.character.id}>{acter.person.name}</li>
-                            })}
-                        </ul>
-                        <h3>Show Details</h3>
-                        {this.state.show.summary}
+                        {cast.map((acter) => {
+                            return (
+                                <div className="row">
+                                    <img src={acter.person.image.original} alt={acter.person.name} className="col-3" style={{ height: "5%" }} />
+                                    <p key={acter.person.id} className="col-3">{acter.person.name}</p>
+                                    <p className="col-1">---</p>
+                                    <p key={acter.character.id} className="col-3">{acter.character.name}</p>
+                                </div>
+                            )
+                        })}
+                        <div className="row">
+                            <div className="col-lg-6 col-sm-12">
+                                {<p style={{ textAlign: "center" }} id="collapseExample"><h5>Summary</h5><br></br>{this.state.show.summary.replace(/<\/?[^>]+(>|$)/g, "")}</p>}
+                                <a target="_blank" href={`http://www.imdb.com/title/${this.state.imdb}`}>Check out details on IMDB</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
