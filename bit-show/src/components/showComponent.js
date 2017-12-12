@@ -7,16 +7,15 @@ const ShowComponent = (props) => {
     const { name, imageUrl, id } = props.show;
 
     return (
-        <div className="showContainer col-12 col-md-6 col-lg-4" style={{ border: "1px solid black" }}>
+        <div className="col-12 col-md-5 offset-md-1 col-lg-3" style={{ padding: "0px" }}>
             <Link to={`/${id}`}>
-                <div >
-                    <img src={imageUrl} alt="" className="col-12" style={{width: "90%", height: "80%", padding: "10%"}} />
-                    <p>{name}</p>
+                <div className="showContainer">
+                    <img src={imageUrl} alt="" style={{ width: "100%", maxHeight: "80%" }} />
+                    <p style={{ backgroundColor: "white", width: "100%", height: "20%" }}><span>{name}</span></p>
                 </div>
             </Link>
         </div>
     );
-
 };
 
 ShowComponent.propTypes = {

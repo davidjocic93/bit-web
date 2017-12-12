@@ -30,7 +30,7 @@ class MainPage extends React.Component {
                 serverResponseData.data.forEach(element => {
 
                     const name = element.name;
-                    const imageUrl = element.image.original;
+                    const imageUrl = element.image.medium;
                     const id = element.id;
 
                     const show = new ShowDTO(name, imageUrl, id);
@@ -56,10 +56,10 @@ class MainPage extends React.Component {
         const shows = this.state.shows;
 
         return (
-            <div style={{marginTop: "100px"}}>
+            <div>
                 <h1>Popular Shows</h1>
                 <div className="container">
-                    <div className="row">
+                    <div className="row text-center">
                         {shows.map((show) => {
                             return <ShowComponent show={show} key={show._id} />;
                         })}

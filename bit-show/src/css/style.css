@@ -1,0 +1,85 @@
+body {
+    background: #1a1a1d url(../img/bg.jpg);
+    color: rgb(243, 237, 240);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.showContainer {
+    height: 100%;
+    padding-bottom: 20px;
+}
+
+.showContainer img {
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+}
+
+.showContainer p {
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+.showContainer p span {
+    color: black;
+    margin: auto;
+    position: relative;
+    top: 30%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 767px) {
+    .text-center {
+        margin-right: 10%;
+    }
+} 
+
+a:hover {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    padding: 40px;
+}
+
+#logo {
+    padding: 5px;
+    color: white;
+    border: 1px solid white;
+}
+
+.searchItem {
+    padding: 5px;
+}
+
+.searchItem a {
+    color: black;
+}
+
+.searchItem a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+/* Single Show */
+
+.singleShowImage {
+    border-radius: 60px;
+}
+
+h5 a {
+    color: white;
+}
+
+h5 a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.card {
+    border-radius: 10px;
+}

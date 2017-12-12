@@ -9,7 +9,7 @@ class Header extends React.Component {
         this.state = {
             shows: [],
             searchTerm: "",
-            visibility: "hidden"
+            display: "none"
         };
 
         this.clearSearch = this.clearSearch.bind(this);
@@ -42,7 +42,7 @@ class Header extends React.Component {
     clearSearch() {
         this.setState({
             shows: [],
-            visibility: "hidden",
+            display: "none",
             searchTerm: ""
         });
     }
@@ -53,11 +53,17 @@ class Header extends React.Component {
             searchTerm: searchString
         });
 
-        this.loadData(searchString);
+        this.loadData(searchString.toLowerCase());
 
         this.setState({
-            visibility: ""
+            display: ""
         });
+
+        if (searchString === "") {
+            this.setState({
+                display: "none"
+            });
+        }
 
     }
 
@@ -72,18 +78,18 @@ class Header extends React.Component {
 
                 <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
 
-                    <Link className="navbar-brand" id="logo" to="/">BitShow</Link>
+                    <Link className="navbar-brand" id="logo" to="/">TV Shows Finder</Link>
 
                     <form className="form-inline my-2 my-lg-0">
                         <input className="form-control mr-sm-2" onChange={this.handleChange} value={this.state.searchTerm} type="text" placeholder="Search" />
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <button className="btn btn-light my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </nav>
 
-                <div style={{ visibility: this.state.visibility, position: "absolute", top: "50px", right: "4%", textAlign: "center", width: "100%", zIndex: 20, backgroundColor: "white"}}>
+                <div style={{ display: this.state.display, position: "absolute", top: "55px", textAlign: "center", width: "100%", zIndex: 20, backgroundColor: "white"}}>
                     <ul style={{listStyleType: "none"}}>
                         {shows.map((show) => {
-                            return <li onClick={this.clearSearch} style={{borderBottom: "1px solid grey"}}> <Link to={`/${show.show.id}`}>{show.show.name}</Link></li>;
+                            return <li onClick={this.clearSearch} className="searchItem"> <Link to={`/${show.show.id}`}>{show.show.name}</Link></li>;
                         })}
                     </ul>
                 </div>

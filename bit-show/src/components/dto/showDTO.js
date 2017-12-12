@@ -16,8 +16,6 @@ class ShowDTO {
     get id(){
         return this._id;
     }
-
-
 }
 
 export default ShowDTO;
